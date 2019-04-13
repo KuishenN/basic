@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .tabBox {
+    width: 200px;
+    height: 100px;
+    background-color: #0f0;
+  }
+  .tabBox ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+  }
+  .tabBox ul li {
+    flex: 1
+  }
+  .active {
+    background-color: #f0f;
+  }
+  .tabBox .content {
+    background-color: #f00;
+    height: 80px;
+  }
+  </style>
+</head>
+<body>
+  <div class="tabBox" id="tabBox">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <div class="content"></div>
+  </div>
+  <script>
+   var tabBox = document.getElementById('tabBox')
+   var olis = tabBox.getElementsByTagName('li')
+   var content = tabBox.getElementsByClassName('content')[0]
+
+   for (let i = 0; i < olis.length; i++) {
+    olis[i].onclick = function () {
+      console.log(1)
+      for (let j = 0; j < olis.length; j++) {
+      olis[j].className = ''
+    }
+    this.className = 'active'
+    content.innerHTML = i
+    }
+   }
+  
+  </script>
+</body>
+</html>
