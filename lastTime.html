@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .box {
+    width: 500px;
+    height: 300px;
+    background-color: #f00;
+  }
+  .box span {
+    color: #000;
+    font-size: 15px;
+  }
+
+</style>
+<body>
+  <div class="box">
+    <span id="timeBox"></span>
+  </div>
+  <script>
+    var timeBox = document.getElementById('timeBox');
+    lastTime()
+    let timer =  setInterval(() => {
+      lastTime()
+    }, 1000);
+
+  function lastTime() {
+    let nowTime = new Date(),
+    targetTime = new Date('2019/4/28')
+
+    let restTime = targetTime - nowTime // 获取时间差
+
+    if (restTime <= 0) {
+      timeBox.innerHTML = '开始抢购'
+      clearInterval(timer)
+
+      return
+    }
+    // 计算时间差
+    let hours = Math.floor(restTime / (1000 * 60 * 60))
+    restTime -= hours * 1000 * 60 * 60
+    let minutes = Math.floor(restTime / (1000 * 60 ))
+    restTime -= minutes * 1000 * 60
+    let seconds = Math.floor(restTime / 1000)
+    timeBox.innerHTML = `${hours}:${minutes}:${seconds}`
+  }
+  </script>
+</body>
+</html>
