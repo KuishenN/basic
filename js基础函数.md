@@ -1,6 +1,6 @@
-# js的基础-函数
+##js的基础-函数
 
-> 函数: js中指的是实现某一个功能的方法
+> 函数: js中指的是实现某一个功能的方法， 具有特定功能的代码块，减少页面中冗杂的代码，提高代码的复用
 
 - 创建函数
 
@@ -37,23 +37,23 @@
 
 ```js
 function fn(num1, num2) {  // num1, num2就是形参变量
+  return [函数执行结果]
 }
 ```
-
 - arguments实参集合
   1. arguments只有函数才有，
   2. 函数天生自带的
   3. arguments中始终存储的是实参信息
   4. arguments类数组(以数字做索引，具有length的属性)
 - arguments.callee: 存储的是当前函数本身
-- arguments.callee.calller: 存储的是当前宿主函数在哪执行的，在全局下执行结果是null,执行函数的执行环境
+- arguments.callee.caller: 存储的是当前宿主函数在哪执行的，在全局下执行结果是null,执行函数的执行环境
 
  ```js
  function fn () {
    var total = null
    for(var i = 1; i< arguments.length; i++) {
     var curr = Number(arguments[i])
-    if (isNaN(curr)) {
+    if (isNaN(curr)){
       continue;
     }
     total += curr
@@ -61,20 +61,17 @@ function fn(num1, num2) {  // num1, num2就是形参变量
    return total  // return后面返回的都是值，而不是返回变量
  }
   ```
-
 - 函数的返回值return
   - 直接返回return之后的代码都不在执行
 
 - js中的匿名函数
-
-> 函数表达式
-> 自执行函数
+> 1. 函数表达式 2. 定时器中的函数 3. 自执行函数
+- 创建函数，开辟的堆内存中存储的是函数体中的函数代码字符串， 函数执行的目的就是把函数题中的代码执行，形成一个私有栈内存
+- 函数的返回值，有return，返回的是return 后面的值，没有return 返回的是udfined
 
 ```js
 oBox.onclick = functions() {
-
 }
-
 (function(n) {
   创建函数和执行函数放在一起了，创建之后立马执行
 })(10)
