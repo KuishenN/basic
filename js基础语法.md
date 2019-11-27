@@ -135,23 +135,28 @@
 - Math.max()/Math.min() 获取一组数的最大/最小值
 - Math.pow()/Math.sqrt() 获取数的平方/开平方的值
 
-- String的常用方法
+## String的常用方法
 
 - 1 在js中使用单引号和双引号包裹起来的，由0到多个字符组成的，以数字为索引，从0开始
-- 2 有一个length可以获取当前字符串的长度 str.length
+- 2 有一个length可以获取当前字符串的长度 
+  - str.length: 获取字符串的长度
+  - str[0]：获取字符串的第一个字符
+  - str[str.length-1]: 获取字符串的最后一个字符
+  - str[10000] => undefined 不存在的字符是undefined
 - 3 常用字符长的方法
   - 3.1 charAt()/charCodeAt(): 返回当前字符的索引的字符和和当前字符索引的ASCll值
     - [ASCLL 48-57 -> 0-9 65-90 -> a-z 97-122 -> A-Z]
-  - 3.2 substr&&substring&&slice
+  - 3.2 `substr&&substring&&slice`
     - 实现字符串的截取
-    - substr(n,m): 从字符索引n开始，截取m个字符
+    - `substr(n,m): 从字符索引n开始，截取m个字符`
     - substring(n,m): 从字符索引n开始，截取索引m处
-    - slice(n, m): 从字符索引n开始，截取索引m处,支持负数截取
-    - slice(): 字符串的复制
+    - slice(n, m): 从字符索引n开始，截取索引m处,支持负数作为索引
+    
   - 3.3 toUpperCase()/toLowerCase() 字符串全部转换大/小写
-  - 3.4 indexOf&&lastIndexOf
+  - 3.4 `indexOf&&lastIndexOf` 
+    > 验证字符串是否存在, IE6-8不兼容
     - indexOf():查看当前字符串在当前的索引，不存在返回-1
-    - lastIndexOf(): 自右向左查看当前字符串的索引
+    - lastIndexOf(): 自右向左查看当前字符串的索引, 不存在返回-1
   - split():把当前的字符串按照特定字符拆分为数组与数组的join()对应
   - replace(): 实现字符串的替换，可以使用正则匹配多次
   - trim()/trimLeft()/trimaRight():去除两边的空格

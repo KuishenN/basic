@@ -27,6 +27,9 @@ function unique2(arr) {
 }
 console.log(unique2(arr));
 
+//3. 对象式数组去重
+// 4. 基于es6数组去重的方式
+
 function bubble(arr) {
   // 外层循环比较的是比较的轮数
   for (let i = 0; i < arr.length - 1; i++) {
