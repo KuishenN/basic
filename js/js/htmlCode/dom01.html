@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <ul>
+      <li>01</li>
+      <li>02</li>
+      <li>03</li>
+      <div>1</div>
+    </ul>
+    <div class="content">内容1</div>
+    <div class="content">内容2</div>
+    <div>内容3</div>
+    <input type="text" name="sex" value="cccc"/>
+
+    <div>
+      <!-- // 表单元素中sex是用来分组的 -->
+      <input type="radio" name="sex" id="" value="男" checked> 男
+      <input type="radio" name="sex" id="" value="女"> 女
+      <input type="radio" name="sex" id="" value="保密"> 保密
+      <button id="submit">提交</button>
+    </div>
+  </div>
+  <script>
+    let box = document.getElementById('box')
+    let head = document.head
+    let body = document.body
+    let html = document.documentElement
+    let inputName = document.getElementsByName('sex')
+    console.log(box)
+    let list = box.querySelectorAll('div')
+    let selector = box.querySelector('div')
+    console.log(selector, 'selector')
+    console.log(list)
+    let classList = box.getElementsByClassName('content')
+    let tags = box.getElementsByTagName('li')
+    
+    console.log(inputName, 'inputName')
+    console.log(tags, 'tags')
+    console.log(classList)
+    console.log(html)
+    console.log(body)
+    console.log(head)
+  
+  let submitBtn = document.getElementById('submit')
+  let tagNames = document.getElementsByName('sex')
+
+  submitBtn.onclick = function () {
+    for (let i = 0; i < tagNames.length; i++) {
+
+      if (tagNames[i].checked) {
+        console.log(tagNames[i].checked, 'tagNames[i]')
+        alert(tagNames[i].value)
+      }
+    }
+  }
+
+  </script>
+</body>
+</html>
