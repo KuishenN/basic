@@ -38,20 +38,20 @@
     <div class="content"></div>
   </div>
   <script>
-   var tabBox = document.getElementById('tabBox')
-   var olis = tabBox.getElementsByTagName('li')
-   var content = tabBox.getElementsByClassName('content')[0]
+  var tabBox = document.getElementById('tabBox')
+  var olis = tabBox.getElementsByTagName('li')
+  var content = tabBox.getElementsByClassName('content')[0]
 
-   for (let i = 0; i < olis.length; i++) {
-    olis[i].onclick = function () {
-      console.log(1)
-      for (let j = 0; j < olis.length; j++) {
-      olis[j].className = ''
-    }
-    this.className = 'active'
-    content.innerHTML = i
-    }
-   }
+  for (let i = 0; i < olis.length; i++) {
+  olis[i].onclick = function () {
+    console.log(1)
+    for (let j = 0; j < olis.length; j++) {
+    olis[j].className = ''
+  }
+  this.className = 'active'
+  content.innerHTML = i
+  }
+  }
   
   </script>
 </body>
